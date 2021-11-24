@@ -1,0 +1,31 @@
+{
+	"name": "frontenddev",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "concurrently \"npm:sass:watch\" \"npm:autoprefix:watch\"",
+		"sass:watch": "sass --watch ./scss/frontenddev.scss ../assets/css/frontenddev.css",
+		"autoprefix": "npx postcss ../assets/css/*.css --use autoprefixer -r",
+		"autoprefix:watch": "onchange ../assets/css/*.css -- npm run autoprefix"
+	},
+	"keywords": [
+		"frontend",
+		"developer",
+		"html",
+		"css",
+		"js",
+		"angular",
+		"wordpress theme"
+	],
+	"author": "Edwin Harmata, <edwin.harmata@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"autoprefixer": "^10.4.0",
+		"concurrently": "^6.4.0",
+		"onchange": "^7.1.0",
+		"postcss": "^8.4.0",
+		"postcss-cli": "^9.0.2",
+		"sass": "^1.43.4"
+	}
+}

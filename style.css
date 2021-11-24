@@ -1,0 +1,16 @@
+/*
+Theme Name: frontenddev
+Theme URI: https://github.com/ebi2626/frontenddev
+Author: Edwin Harmata, <edwin.harmata@gmail.com>
+Author URI: http://edwinharmata.pl
+Description: Frontenddev is the definitive WordPress theme for frontend developers. It is focused on semantic HTML markup and simple minimalist styling with all good practicies.
+Tags: accessibility-ready, developer, frontend, html, css, react, angular, bootstrap, scss
+Version: 1
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 7.0
+Text Domain: frontenddev
+
+*/
+
+@import "./assets/css/frontenddev.css";
