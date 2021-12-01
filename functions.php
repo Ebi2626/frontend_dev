@@ -4,6 +4,7 @@ add_action( 'after_setup_theme', 'frontenddev_setup' );
 function frontenddev_setup() {
     load_theme_textdomain( 'frontenddev', get_template_directory() . '/languages' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-logo' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'responsive-embeds' );
     add_theme_support( 'automatic-feed-links' );
@@ -21,7 +22,11 @@ function frontenddev_setup() {
 add_action( 'wp_enqueue_scripts', 'frontenddev_enqueue' );
 function frontenddev_enqueue() {
     wp_enqueue_style( 'frontenddev-style', get_stylesheet_uri() );
-    wp_enqueue_script( 'jquery' );
+    wp_enqueue_style( 'font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' );
+    wp_enqueue_script( 'jquery', get_template_directory_uri().'/src/js/jquery.js', array(), '3.6.0', true );
+    wp_enqueue_script( 'popper', get_template_directory_uri().'/src/js/popper.js', array('jquery'), '2.10.2', true );
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/src/js/bootstrap.min.js', array('jquery', 'popper'), '5.1.3', true );
+    wp_enqueue_script( 'frontenddev-scripts', get_template_directory_uri().'/assets/js/frontenddev-script.js', array(), '0.0.1', false );
 }
 
 // Device detection in footer
