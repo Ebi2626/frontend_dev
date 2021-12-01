@@ -1,0 +1,12 @@
+.experience {
+    .nav {
+        .nav-link {
+            &.active {
+                color: $navy;
+            }
+            &:last-child{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

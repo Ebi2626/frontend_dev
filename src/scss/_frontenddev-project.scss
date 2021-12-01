@@ -1,0 +1,106 @@
+.project {
+    display: flex;
+    position: relative;
+
+    @media all and (min-width: 1200px){
+        margin-bottom: 7rem;
+        .project__content {
+            p {
+                padding: 2rem;
+            }
+            .flat-list {
+                flex-wrap: nowrap;
+            }
+
+        }
+        &:nth-child(even){
+            flex-direction: row;
+            .project__content{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 55%;
+                overflow: visible;
+                p {
+                    box-shadow: 3px 3px 4px 3px rgba(0, 0, 0, 0.289); 
+                }
+             }
+            .project__image { 
+                display: flex;
+                justify-content: flex-end;
+                .img {
+                    right: 0;
+                    width: 55%;
+                    
+                    @media all and (max-width: 1200px){
+                        width: 65%;
+                    }
+                }
+            }
+        }
+    
+        &:nth-child(odd){
+            flex-direction: row-reverse;
+            .project__content{
+                position: absolute;
+                right: 0;
+                overflow: visible;
+                text-align: right;
+                p {
+                    box-shadow: -3px 3px 4px 3px rgba(0, 0, 0, 0.289); 
+                }
+                .flat-list {
+                    justify-content: flex-end;
+                }
+                header {
+                    text-align: end;
+                }
+                width: 55%;
+              
+             }
+            .project__image { 
+                .img {
+                    width: 55%;
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 1199px){
+        margin-bottom: 3rem;
+        flex-direction: column-reverse;
+        box-shadow: -3px 3px 4px 3px rgba(0, 0, 0, 0.289); 
+        border: solid 1px black;
+        border-top: 0px;
+
+        .project__content{
+            padding: 1rem;
+            header {
+                margin-top: 1rem;
+                text-align: center;
+            }
+        }
+
+    }
+
+    &__content {
+        header {
+            margin-bottom: 2rem;
+        }
+
+        p {
+            background-color: $navy;
+        }
+        z-index: 2;
+    }
+    &__image {
+        z-index: 1;
+    }
+
+    .icon {
+        font-size: 1.25rem;
+        display: inline-block;
+        margin: auto .5rem;
+    }
+
+}
